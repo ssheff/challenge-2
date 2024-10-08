@@ -1,4 +1,3 @@
-# challenge-2
 
 
 0. Push the docker container to a Docker registry

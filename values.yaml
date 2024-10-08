@@ -1,0 +1,22 @@
+
+image:
+  repository: sshevchenko/challenge-2
+  pullPolicy: IfNotPresent
+  tag: "latest"  # Use a specific version if you prefer
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  className: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  hosts:
+    - host: my-k8s-app.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+
